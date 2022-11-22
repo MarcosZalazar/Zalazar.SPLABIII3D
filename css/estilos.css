@@ -1,0 +1,188 @@
+h1{
+    text-align: center;
+}
+
+body{
+    margin: 0px;
+}
+
+.fondoPaginaPrincipal{
+    background-image: url("../imagenes/fondoPrincipal.jpg");
+    background-size: cover;
+}
+
+.img-fluid{
+    width: 100px;
+    height: 100px;
+}
+
+.estiloTituloPrincipal{
+    display: flex;
+    justify-content: start;
+    color: white;
+}
+
+nav{
+    background-color:rgba(219, 91, 32, 0.938);
+}
+
+
+#enlacesVerticales{
+    flex-direction: column;
+    margin-right: 100px;
+}
+
+.form-anuncio{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+
+input{
+    display: block;
+    width: 100%;
+    margin: 15px 0px;
+    border-radius: 5px;
+    background-color: #dee;
+    border: 1px solid black;
+}
+
+small {
+    display: block;
+}
+
+.inputError{
+    border: 1px solid red;
+    color: red;
+}
+
+.danger {
+    color: red;
+    font-weight: bold;
+}
+
+
+#divRadiobutton{
+    display: flex;  
+    justify-content: center;  
+}
+
+#divRadiobutton label{
+    width: 150px;
+}
+
+#divRadiobutton input{
+    display: inline-block;
+    width: 20px;
+}
+
+#inputsFontAwesome{
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#inputsFontAwesome input{
+    display: inline-block;
+    width: 70%;
+}
+#inputsFontAwesome img{
+    width: 20px;  
+}
+
+#txtRaza,#txtFechaNacimiento,#txtVacuna{
+    margin: 5px;
+}
+
+#estiloBotones{
+    display: flex;
+    justify-content: space-around;
+}
+
+button:hover{
+    opacity: 1;
+}
+
+#btnGuardar{
+    background-color: rgb(36, 121, 231);
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+#btnCancelar{
+    background-color: rgb(221, 218, 44);
+    margin-left: 50px;
+    margin-right: 50px;
+    border-radius: 3px;
+    font-weight: bold;
+}
+
+#btnEliminar{
+    background-color: rgb(197, 12, 12);
+}
+
+.esconderBoton{
+    display: none;
+}
+
+.mostrarBoton{
+    display: inline-block;   
+}
+
+div small{
+    color: white;
+}
+
+#seccionTablaDinamica{
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+}
+
+table{
+    border-collapse: collapse;
+}
+
+th{
+    text-transform: capitalize;
+    background-color: rgb(236, 104, 104);
+}
+
+th,td{
+    border: 1px solid black;
+    padding: 3px 5px;
+}
+
+
+#spinner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav>div>small{
+    margin-right: 50px;
+}
+
+footer nav{
+    height: 90px;
+}
+
+.formFiltrado{
+    display: flex;
+    justify-content: center;
+    margin: 30px;
+}
+
+#divSelect{
+    display: flex;
+    justify-content: center;
+    background-color: gray;
+}
+
+#divSelect input{
+    margin-left: 50px;
+    margin: 20px;
+}

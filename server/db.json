@@ -1,0 +1,54 @@
+{
+  "anuncios": [
+    {
+      "id": 1,
+      "titulo": "Salem",
+      "descripcion": "Black",
+      "precio": "70966",
+      "animal": "gato",
+      "raza": "Siames",
+      "fechaNacimiento": "2022-01-01",
+      "vacunado": "si"
+    },
+    {
+      "id": 2,
+      "titulo": "Buddy",
+      "descripcion": "deportista",
+      "precio": "12000",
+      "animal": "perro",
+      "raza": "Labrador",
+      "fechaNacimiento": "2022-06-01",
+      "vacunado": "si"
+    },
+    {
+      "id": 3,
+      "titulo": "Felix",
+      "descripcion": "pandillero",
+      "precio": "10000",
+      "animal": "perro",
+      "raza": "Callejero",
+      "fechaNacimiento": "2020-01-01",
+      "vacunado": "no"
+    },
+    {
+      "id": 4,
+      "titulo": "Fatiga",
+      "descripcion": "argentino",
+      "precio": "12345",
+      "animal": "perro",
+      "raza": "Doberman",
+      "fechaNacimiento": "2019-01-01",
+      "vacunado": "no"
+    },
+    {
+      "id": 1669076191733,
+      "titulo": "Silvestre",
+      "descripcion": "bueno",
+      "precio": "12435",
+      "animal": "gato",
+      "raza": "Bengalí",
+      "fechaNacimiento": "2007-01-01",
+      "vacunado": "si"
+    }
+  ]
+}

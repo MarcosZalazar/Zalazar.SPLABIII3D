@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./js/administracion.js" type="module" defer></script> 
+    <link rel="stylesheet" href="./css/estilos.css">
+    <link rel="stylesheet" href="./css/tablaDinamica.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <title>Administracion</title>
+</head>
+<body>
+    <div class="container-fluid">
+        <header>
+            <nav class="navbar navbar-expand-lg" id="estiloTituloAdmin">
+                <a class="navbar-brand" href="#"><img src="./imagenes/LogoEmpresa.jpg" alt="Logo de la empresa" class="img-fluid"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="enlacesVerticales">
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.html">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Anuncios</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                        </li>
+                    </ul>
+                </div>
+              </nav>
+        </header>
+        <main class="crud">
+            <section>
+                <h1>Administracion</h1> 
+                <img src="./imagenes/animales.jpg" alt="fotos de animales">  
+                <form action="#" class="form-anuncio">
+                    <fieldset>
+                        <legend>Información Del Anuncio</legend>
+                        <div class="row">
+                            <div class="form-group">
+                                <label>TITULO:</label>
+                                <input type="text" id="txtTitulo" placeholder="Titulo">
+                                <small></small>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label>DESCRIPCION:</label>
+                                <input type="text" id="txtDescripcion" placeholder="Descripcion">
+                                <small></small>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <label>ANIMAL:</label>
+                            <div class="col-4">
+                                <div class="form-check">
+                                    <input type="radio" name="rbtAnimal" value="perro" class="form-checked-input" checked>PERRO
+                                </div>
+                            </div>
+                            <div class="col-4">
+                                <div class="form-check">
+                                    <input type="radio" name="rbtAnimal" value="gato" class="form-checked-input">GATO
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <label>PRECIO:</label>
+                                <input type="number" id="txtPrecio" placeholder="Precio">
+                                <small></small>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">
+                                <div id="inputsFontAwesome">
+                                    <i class="fa-sharp fa-solid fa-shield-dog"></i>
+                                    <input type="text" id="txtRaza" placeholder="Raza">
+                                    <small></small>
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <input type="date" id="txtFechaNacimiento" placeholder="dd/mm/aaaaa">
+                                    <small></small>
+                                    <i class="fa-solid fa-syringe"></i>
+                                    <select name="txtVacuna" id="txtVacuna">
+                                        <option value="si">si</option>
+                                        <option value="no">no</option>
+                                    </select>
+                                    <small></small>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="hidden" name="txtId"> 
+                        <button type="submit" id="btnGuardar" ><i class="fa-solid fa-floppy-disk"></i>
+                            Guardar
+                        </button>
+                        <button type="button" id="btnEliminar" class="esconderBoton" name="eliminar">Eliminar</button>
+                        <button type="reset" id="btnCancelar"></i>Cancelar</button>
+                    </fieldset>
+                </form> 
+            </section>
+            <section>
+                <div class="container">
+                    <form action="#" class="formFiltrado">
+                        <fieldset>
+                            <div class="row justify-content-around">
+                                <div class="col-5">
+                                    <div class="mb-5">
+                                        <label for="selAnimal" class="col-form-label">FILTRAR ANIMAL</label>
+                                        <select id="selAnimal" name="selAnimal" class="form-select form-select-sm">
+                                            <option value="todos">TODOS</option>
+                                            <option value="perro">PERRO</option>
+                                            <option value="gato">GATO</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-5">
+                                    <div class="mb-5">
+                                        <div class="form-group">
+                                            <label>PROMEDIO:</label>
+                                            <input type="text" id="txtPromedio" placeholder="N/A" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="divSelect">
+                                <input type="checkbox" name="titulo" checked="checked" /> <label>TITULO</label> 
+                                <input type="checkbox" name="descripcion" checked="checked" /> <label>DESCRIPCION</label> 
+                                <input type="checkbox" name="precio" checked="checked" /> <label>PRECIO</label> 
+                                <input type="checkbox" name="animal" checked="checked" /> <label>ANIMAL</label> 
+                                <input type="checkbox" name="raza" checked="checked" /> <label>RAZA</label> 
+                                <input type="checkbox" name="fechaNacimiento" checked="checked" /> <label>FECHA DE NACIMIENTO</label> 
+                                <input type="checkbox" name="vacunado" checked="checked" /> <label>VACUNADO</label> 
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </section>
+        </main>
+        <div id="spinner"></div>
+        <section id="seccionTablaDinamica">
+            <div id="divTabla"></div>
+        </section>
+        <footer>
+            <nav class="navbar navbar-expand-lg">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.html">Nosotros</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Anuncios</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Blog</a>
+                        </li>
+                        <li class="nav-item">
+                        <a class="nav-link" href="#">Contacto</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <small>Todos los derechos reservados 2022 &copy;</small>
+                    </div>
+                </div>
+              </nav>
+        </footer>
+    </div>
+</body>
+</html>
